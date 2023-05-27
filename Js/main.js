@@ -18,15 +18,22 @@ async function fetchVehicles(){
     let vehicles = data.results;
     vehicles?.forEach(item => {
         console.log(item.name);
+        console.log(item.cost_in_credits);
+
+        //Agrego este if ya que algunas naves no poseen precio en la API
+        if(item.cost_in_credits == "unknown"){
+            price = Math.round(Math.random() * 100000);
+            item.cost_in_credits = price;
+        }
 
         card += `<div>
             <span class="photo-vehicle"></span>
             <ul>
-                <li>Nombre: ${item.name}</li>
-                <li>Fabricante: ${item.manufacturer}</li>
-                <li>Tripulantes: ${item.crew}</li>
-                <li>Pasajeros: ${item.passengers}</li>
-                <li>Precio: ${item.cost_in_credits}</li>
+                <li>${item.manufacturer}</li>
+                <li>${item.name}</li>
+                <li><span class="crew-icon" title="Total de tripulantes">${item.crew}</li>
+                <li><span class="passengers-icon" title="Total de pasajeros"></span> ${item.passengers}</li>
+                <li><span class="price">$</span>${item.cost_in_credits}</li>
             </ul>
         </div>`
     });

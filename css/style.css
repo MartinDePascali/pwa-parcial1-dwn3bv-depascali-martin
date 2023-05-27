@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:linear-gradient(#2b1055, #7597de);
+}
+
+header{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:30px 100px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:10000;
+}
+
+header .logo{
+    color:#fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: .5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    list-style: none;
+    margin-left:3em;
+}
+
+header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color:#fff;
+    border-radius:20px;
+}
+
+header ul li a:hover,
+header ul li a.active{
+    background:#fff;
+    color:#2b1055;
+}
+
+section{
+    position:relative;
+    width:100%;
+    height: 100vh;
+    padding:100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+}
+
+section::before{
+    content:'';
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:100px;
+    background:linear-gradient(to top, #1c0522, transparent);
+    z-index: 1000;
+}
+
+section img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section img#moon{
+    mix-blend-mode: screen;
+}
+
+section img#mountains_front{
+    z-index:10;
+}
+
+#Banner{
+    display:flex;
+    flex-direction: column;
+    background:url(../Imagenes/stars.png);
+}
+
+#Banner h2{
+    color:#fff;
+    font-size:4em;
+    text-align: center;
+}
+
+#Banner p{
+    color:#fff;
+    font-size: 2em;
+}
+
+#btn{
+    text-decoration: none;
+    padding: 8px 30px;
+    border-radius:40px;
+    display:inline-block;
+    background:#fff;
+    color:#2b1055;
+    font-size:1.5em;
+    z-index:9;
+    transform:translateY(100px);
+}
+
+p{
+    margin-bottom:3em;
+}
+
+.products-container{
+    position:relative;
+    padding:100px;
+    background:#1c0522;
+}
+
+.products-container h2{
+    font-size:3.5em;
+    margin-bottom:10px;
+    color:#fff;
+}
+
+.products-container ul{
+    font-size:1em;
+    color:#fff;
+    list-style: none;
+    background: linear-gradient(#7597de, #2b1055);
+    margin:0;
+    padding:1em;
+}
+
+.products-container li:first-of-type{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: .8em;
+}
+
+.products-container li:nth-child(2){
+    font-size: 2em;
+}
+
+.products-container li:nth-child(3),
+.products-container li:nth-child(4){
+    display:flex;
+    align-items: center;
+    font-size: 2em;
+}
+
+.passengers-icon{
+    background-image: url(../Imagenes/Passengers.svg);
+    background-repeat: no-repeat;
+    display:block;
+    width:60px;
+    height: 60px;
+}
+
+.crew-icon{
+    background-image: url(../Imagenes/Tripulantes.svg);
+    background-repeat: no-repeat;
+    display:block;
+    width:60px;
+    height: 60px;
+}
+
+.products-container li:last-of-type{
+    font-size: 2em;
+    text-align: right;
+}
+
+.price{
+    color:#fffc5a;
+}
+
+.card-vehicle{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-vehicle > div{
+    width:30%;
+    margin-bottom:2em;
+    background-color: blueviolet;
+    border-radius: .5em;
+}
+
+.photo-vehicle{
+    background-image:url(../Imagenes/Sandcrawler.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    width: 100%;
+    height: 280px;
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+}
