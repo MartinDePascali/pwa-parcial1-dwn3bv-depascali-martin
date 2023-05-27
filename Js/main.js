@@ -17,8 +17,6 @@ async function fetchVehicles(){
 
     let vehicles = data.results;
     vehicles?.forEach(item => {
-        console.log(item.name);
-        console.log(item.cost_in_credits);
 
         //Agrego este if ya que algunas naves no poseen precio en la API
         if(item.cost_in_credits == "unknown"){
@@ -26,13 +24,23 @@ async function fetchVehicles(){
             item.cost_in_credits = price;
         }
 
+        if(item.name == "TIE/LN starfighter"){
+            item.name = "TIE starfighter"
+        }
+
         card += `<div>
-            <span class="photo-vehicle"></span>
+            <img class="img-vehicle" src="../Imagenes/Naves/${item.name}.png" />
             <ul>
                 <li>${item.manufacturer}</li>
                 <li>${item.name}</li>
-                <li><span class="crew-icon" title="Total de tripulantes">${item.crew}</li>
-                <li><span class="passengers-icon" title="Total de pasajeros"></span> ${item.passengers}</li>
+                <li>
+                    <div>
+                        <span class="crew-icon" title="Total de tripulantes"></span> ${item.crew}
+                    </div>
+                    <div>
+                        <span class="passengers-icon" title="Total de pasajeros"></span> ${item.passengers}
+                    </div>
+                </li>
                 <li><span class="price">$</span>${item.cost_in_credits}</li>
             </ul>
         </div>`
